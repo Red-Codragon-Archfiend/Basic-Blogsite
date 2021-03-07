@@ -7,6 +7,9 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 
 const port = process.env.PORT || 3000;
+const homStartingContent = '';
+const aboutContent = '';
+const contactContent = '';
 
 const app = express();
 
