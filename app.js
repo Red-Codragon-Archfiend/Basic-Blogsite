@@ -20,8 +20,8 @@ const lorem = new LoremIpsum({
 
 const port = process.env.PORT || 3000;
 const homStartingContent = lorem.generateParagraphs(2);
-const aboutContent = lorem.generateParagraphs(2);
-const contactContent = lorem.generateParagraphs(2);
+const aboutStartingContent = lorem.generateParagraphs(2);
+const contactStartingContent = lorem.generateParagraphs(2);
 
 const app = express();
 
@@ -32,8 +32,20 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.render('home', {
-        homeParagraphContent: homStartingContent,
+        homeStartingContent: homStartingContent,
     });
+});
+
+app.get('/about', (req, res) => {
+  res.render('about', {
+    aboutStartingContent: aboutStartingContent,
+  });
+});
+
+app.get('/contact', (req, res) => {
+  res.render('contact', {
+    contactStartingContent: contactStartingContent,
+  });
 });
 
 app.listen(port, () => {
