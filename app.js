@@ -69,7 +69,9 @@ app.post('/compose', (req, res) => {
 app.get('/posts/:title', (req, res) => {
   posts.forEach((post) => {
     if (_.lowerCase(req.params.title) === _.lowerCase(post.title)) {
-      console.log('Match!');
+      res.render('post', {
+        post: post,
+      });
     }
   });
 });
