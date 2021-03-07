@@ -6,6 +6,7 @@ const LoremIpsum = require("lorem-ipsum").LoremIpsum;
 const express = require('express');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
+const _ = require('lodash');
 
 const lorem = new LoremIpsum({
     sentencesPerParagraph: {
@@ -67,7 +68,7 @@ app.post('/compose', (req, res) => {
 
 app.get('/posts/:title', (req, res) => {
   posts.forEach((post) => {
-    if (req.params.title === post.title) {
+    if (_.lowerCase(req.params.title) === _.lowerCase(post.title)) {
       console.log('Match!');
     }
   });
