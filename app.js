@@ -52,6 +52,12 @@ app.get('/compose', (req, res) => {
   res.render('compose');
 });
 
+app.post('/compose', (req, res) => {
+  let post = req.body.postTitle;
+
+  console.log(post);
+});
+
 app.listen(port, () => {
     console.log(`Listening on port: ${port}`)
 });
