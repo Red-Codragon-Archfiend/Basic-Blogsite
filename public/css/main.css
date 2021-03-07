@@ -11,9 +11,16 @@
   margin-bottom: 0;
   font-size: 12px;
   letter-spacing: 5px;
+  background-color: rgba(248, 245, 245, 0.808);
 }
-
-.navbar-nav li a:hover {
+.navbar li {
+  display: inline-block;
+  padding: 8px;
+}
+.navbar li a {
+  color: #212529;
+}
+.navbar li a:hover {
   color: #1abc9c !important;
 }
 
@@ -29,7 +36,7 @@
 .footer p {
   margin-top: 25px;
   font-size: 12px;
-  color: white;
+  color: #fff;
 }
 
 /*# sourceMappingURL=main.css.map */

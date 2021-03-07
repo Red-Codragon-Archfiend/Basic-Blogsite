@@ -6,8 +6,18 @@
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
-}
+    background-color: rgba(248, 245, 245, 0.808);
 
-.navbar-nav li a:hover {
-    color : $navbar-hover !important;
+    li {
+        display: inline-block;
+        padding: 8px;
+
+        a {
+            color: $navbar-content;
+        }
+    }
+
+    li a:hover {
+        color : $navbar-hover !important;
+    }
 }
