@@ -66,8 +66,6 @@ app.post('/compose', (req, res) => {
 });
 
 app.get('/posts/:title', (req, res) => {
-  console.log(posts);
-
   posts.forEach((post) => {
     if (req.params.title === post.title) {
       console.log('Match!');
