@@ -22,6 +22,7 @@ const port = process.env.PORT || 3000;
 const homStartingContent = lorem.generateParagraphs(2);
 const aboutStartingContent = lorem.generateParagraphs(2);
 const contactStartingContent = lorem.generateParagraphs(2);
+const posts = [];
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
+    console.log(posts);
     res.render('home', {
         homeStartingContent: homStartingContent,
     });
@@ -54,12 +56,13 @@ app.get('/compose', (req, res) => {
 
 app.post('/compose', (req, res) => {
 
-  let post = {
+  const post = {
     title: req.body.postTitle,
     body: req.body.postContent,
   };
 
-  console.log(post);
+  posts.push(post);
+  res.redirect('/');
 });
 
 app.listen(port, () => {
